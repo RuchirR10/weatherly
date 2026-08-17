@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <h3>Weatherly.</h3>
+            <p>Fresh weather insights for your next trip.</p>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Browse Cities</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="weather-card">
+                <div class="card-header">
+                    <span class="eyebrow">Weather Lookup</span>
+                    <h1>Discover weather by city</h1>
+                    <p>Choose a state and city, then click the button to reveal live weather details.</p>
+                </div>
+
+                <div class="form-area">
+                    <div class="field-group">
+                        <label for="state">State</label>
+                        <select id="state" onchange="print_city('city', this.selectedIndex)">
+                            <option>Select State</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="city">City</label>
+                        <select id="city">
+                            <option>Select City</option>
+                        </select>
+                    </div>
+
+                    <button id="showWeather" type="button" class="btn">Show Weather</button>
+                </div>
+
+                <div id="weatherResult" class="weather-result hidden">
+                    <div class="weather-card-inner">
+                        <div class="weather-details">
+                            <div class="weather-info-block">
+                                <p class="weather-location" id="locationName">Location</p>
+                                <p class="weather-temp" id="temperature">--°C</p>
+                                <p class="weather-description" id="description">Weather description</p>
+                            </div>
+                            <div class="weather-visual">
+                                <img id="weatherIcon" class="weather-icon" src="" alt="Weather icon" />
+                            </div>
+                        </div>
+                        <div class="weather-metrics-grid">
+                            <div class="metric-card">
+                                <span class="metric-label">Humidity</span>
+                                <span class="metric-value" id="humidityVal">--%</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">Wind Speed</span>
+                                <span class="metric-value" id="windVal">-- m/s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="cities.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
