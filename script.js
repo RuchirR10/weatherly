@@ -1,3 +1,4 @@
+const API_KEY = "6a9dd8579fcbd668a222598c1334ed54";
 
 const citySelect = document.querySelector("#city");
 const showWeatherBtn = document.querySelector("#showWeather");
